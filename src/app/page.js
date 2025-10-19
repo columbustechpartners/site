@@ -62,17 +62,10 @@ export default function Home() {
       rating: 5,
     },
     {
-      name: "Alex Place",
-      role: "Head Football Coach, Dublin Scioto High School",
+      name: "Emma Rodriguez",
+      role: "Owner, The Green Fork Cafe",
       content:
-        "The team delivered a stunning website that exceeded our expectations. Communication was excellent throughout the project, and they truly understood our vision.",
-      rating: 5,
-    },
-    {
-      name: "Cassie Dietrich",
-      role: "Public Information Officer, Dublin City Schools",
-      content:
-        "Their automation solution saved us countless hours of manual data entry. The system is reliable, efficient, and has transformed our workflow completely.",
+        "Professional, creative, and responsive. They built us a beautiful website that perfectly captures our cafe's atmosphere. Our online presence has never been stronger!",
       rating: 5,
     },
     {
@@ -80,13 +73,6 @@ export default function Home() {
       role: "Manager, M&M Food Mart",
       content:
         "The custom inventory system our station received has been excellent. It's very user-friendly and has saved us a lot of time in managing our stock. The solution fits our needs perfectly.",
-      rating: 5,
-    },
-    {
-      name: "Emma Rodriguez",
-      role: "Owner, The Green Fork Cafe",
-      content:
-        "Professional, creative, and responsive. They built us a beautiful website that perfectly captures our cafe's atmosphere. Our online presence has never been stronger!",
       rating: 5,
     },
   ];
@@ -215,7 +201,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white font-manrope">
-      {/* Navigation */}
       <header role="banner">
         <nav
           aria-label="Main navigation"
@@ -235,7 +220,6 @@ export default function Home() {
                 </span>
               </motion.div>
 
-              {/* Desktop Menu */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -260,7 +244,6 @@ export default function Home() {
                 ))}
               </motion.div>
 
-              {/* Mobile Menu Button */}
               <button
                 className="md:hidden text-white"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -271,7 +254,6 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Mobile Menu */}
             {isMenuOpen && (
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
@@ -302,7 +284,6 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Hero Section */}
       <main>
         <section
           id="home"
@@ -361,7 +342,6 @@ export default function Home() {
                 </motion.button>
               </div>
 
-              {/* Stats */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -382,7 +362,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Portfolio Section */}
         <section
           id="portfolio"
           aria-label="Our Portfolio of Work"
@@ -501,7 +480,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
         <section
           id="testimonials"
           aria-label="Client Testimonials"
@@ -579,7 +557,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
         <section id="services" aria-label="Our Services" className="py-20 px-6">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -624,7 +601,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Pricing Section */}
         <section
           id="pricing"
           aria-label="Project Pricing"
@@ -730,7 +706,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section aria-label="Start Your Project" className="py-20 px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -758,7 +733,6 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* Contact Section */}
         <section
           id="contact"
           aria-label="Contact Information"
