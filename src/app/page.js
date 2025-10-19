@@ -199,6 +199,73 @@ export default function Home() {
     );
   };
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({
+    type: "", // 'success', 'error', 'rate-limit'
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    if (submitStatus.message) {
+      setSubmitStatus({ type: "", message: "" });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: "", message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Message sent successfully! We'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        if (response.status === 429) {
+          setSubmitStatus({
+            type: "rate-limit",
+            message: `Rate limit exceeded. Maximum ${2} messages per day.`,
+          });
+        } else {
+          setSubmitStatus({
+            type: "error",
+            message:
+              data.message || "Failed to send message. Please try again.",
+          });
+        }
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Network error. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white font-manrope">
       <header role="banner">
@@ -288,7 +355,7 @@ export default function Home() {
         <section
           id="home"
           aria-label="Introduction to Columbus Tech Partners"
-          className="min-h-screen flex items-center justify-center px-6 pt-20"
+          className="min-h-screen flex items-center justify-center px-6 pt-24 md:pt-20"
         >
           <div className="max-w-7xl mx-auto w-full">
             <motion.div
@@ -792,11 +859,19 @@ export default function Home() {
               </div>
 
               <div>
-                <form className="space-y-6" aria-label="Contact form">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                  aria-label="Contact form"
+                >
                   <div>
                     <input
                       type="text"
+                      name="name"
                       placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors"
                       aria-label="Your name"
                     />
@@ -804,27 +879,54 @@ export default function Home() {
                   <div>
                     <input
                       type="email"
+                      name="email"
                       placeholder="Your Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors"
                       aria-label="Your email"
                     />
                   </div>
                   <div>
                     <textarea
+                      name="message"
                       placeholder="Your Message"
+                      value={formData.message}
+                      onChange={handleChange}
                       rows={4}
+                      required
                       className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors resize-none"
                       aria-label="Your message"
                     ></textarea>
                   </div>
+
+                  {/* Status Message */}
+                  {submitStatus.message && (
+                    <div
+                      className={`text-sm ${
+                        submitStatus.type === "success"
+                          ? "text-green-400"
+                          : submitStatus.type === "rate-limit"
+                          ? "text-red-400"
+                          : "text-red-400"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-shadow"
-                    aria-label="Send message"
+                    disabled={isSubmitting}
+                    className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label={
+                      isSubmitting ? "Sending message..." : "Send message"
+                    }
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </motion.button>
                 </form>
               </div>
