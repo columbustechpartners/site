@@ -18,15 +18,14 @@ export const metadata = {
     "custom software development Ohio",
   ],
   openGraph: {
-    title:
-      "Columbus Tech Partners | AI, Automation & Web Development",
+    title: "Columbus Tech Partners | AI, Automation & Web Development",
     description:
       "Custom websites, AI solutions, and automation tools built for performance and results.",
     url: "https://columbustechpartners.com",
     siteName: "Columbus Tech Partners",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://columbustechpartners.com/og-image.png",
         width: 1552,
         height: 813,
         alt: "Columbus Tech Partners website preview",
@@ -37,21 +36,17 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Columbus Tech Partners",
+    title: "Columbus Tech Partners | AI, Automation & Web Development",
     description:
       "We build websites, automation systems, and AI solutions that deliver results.",
-    images: ["/og-image.png"],
+    images: ["https://columbustechpartners.com/og-image.png"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${manrope.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${manrope.variable} antialiased`}>{children}</body>
     </html>
   );
 }

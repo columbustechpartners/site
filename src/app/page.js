@@ -215,60 +215,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white font-manrope">
-      {/* Structured Data for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            name: "Columbus Tech Partners",
-            description:
-              "Professional web development, AI solutions, and business automation services in Columbus, Ohio",
-            url: "https://columbustechpartners.com",
-            telephone: "+1-220-219-6064",
-            email: "contact@columbustechpartners.com",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Columbus",
-              addressRegion: "Ohio",
-              addressCountry: "US",
-            },
-            serviceType: [
-              "Web Development",
-              "AI Solutions",
-              "Business Automation",
-              "Custom Software Development",
-            ],
-            areaServed: "Columbus, Ohio and worldwide",
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "Technology Services",
-              itemListElement: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Website Development",
-                    description:
-                      "Custom websites built with modern technologies",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Business Automation",
-                    description:
-                      "Streamline your business processes with custom automation",
-                  },
-                },
-              ],
-            },
-          }),
-        }}
-      />
-
       {/* Navigation */}
       <header role="banner">
         <nav
@@ -560,8 +506,6 @@ export default function Home() {
           id="testimonials"
           aria-label="Client Testimonials"
           className="py-20 px-6 bg-slate-900/50"
-          itemScope
-          itemType="https://schema.org/Review"
         >
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -586,11 +530,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div
-                className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 md:p-12 border border-slate-700"
-                itemScope
-                itemType="https://schema.org/Review"
-              >
+              <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 md:p-12 border border-slate-700">
                 <div className="flex mb-4">
                   {[...Array(testimonials[activeTestimonial].rating)].map(
                     (_, i) => (
@@ -609,8 +549,8 @@ export default function Home() {
                   "{testimonials[activeTestimonial].content}"
                 </p>
 
-                <div itemScope itemType="https://schema.org/Person">
-                  <div className="font-semibold text-lg" itemProp="name">
+                <div>
+                  <div className="font-semibold text-lg">
                     {testimonials[activeTestimonial].name}
                   </div>
                   <div className="text-cyan-400" itemProp="jobTitle">
@@ -670,8 +610,6 @@ export default function Home() {
                   key={index}
                   variants={fadeInUp}
                   className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
-                  itemScope
-                  itemType="https://schema.org/Service"
                 >
                   <div className="text-cyan-400 mb-4">{service.icon}</div>
                   <h3 className="text-2xl font-bold mb-3" itemProp="name">
@@ -722,8 +660,6 @@ export default function Home() {
                   key={index}
                   variants={fadeInUp}
                   className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
-                  itemScope
-                  itemType="https://schema.org/Offer"
                 >
                   <h3 className="text-2xl font-bold mb-2" itemProp="name">
                     {project.category}
@@ -827,8 +763,6 @@ export default function Home() {
           id="contact"
           aria-label="Contact Information"
           className="py-20 px-6 bg-slate-900/50"
-          itemScope
-          itemType="https://schema.org/ContactPoint"
         >
           <div className="max-w-5xl mx-auto">
             <motion.div
