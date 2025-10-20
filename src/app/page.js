@@ -29,7 +29,7 @@ export default function Home() {
     {
       title: "Scioto Football",
       description:
-        "Modern Next.js website for Dublin Scioto High School's football program, featuring real-time stats, schedules, and team information.",
+        "Modern Next.js website for Dublin Scioto High School's football program, featuring real-time stats, schedules, and team information. saved 5+ hours/week for staff and boosted fan engagement.",
       tech: ["Next.js", "React", "Tailwind CSS"],
       category: "Website Development",
       image: "/portfolio/scioto-football.png",
@@ -38,7 +38,7 @@ export default function Home() {
     {
       title: "Automated Employee Directory",
       description:
-        "Backend automation system for Dublin City Schools that syncs administrator and staff data from HR systems into a centralized Google Sheet.",
+        "Backend automation system for Dublin City Schools that syncs administrator and staff data from HR systems into a centralized Google Sheet. Eliminated manual data entry and reduced update time by 90%",
       tech: ["Python", "Google APIs", "Automation"],
       category: "Business Automation",
       image: "/portfolio/sheet-automation.png",
@@ -46,7 +46,7 @@ export default function Home() {
     {
       title: "The Green Fork Cafe",
       description:
-        "Elegant React-based website for a local cafe featuring online menu, location details, and customer engagement features.",
+        "Elegant React-based website for a local cafe featuring online menu, location details, and customer engagement features. Increased local visibility and drove 20% more online traffic.",
       tech: ["React", "JavaScript", "CSS"],
       category: "Website Development",
       image: "/portfolio/green-fork-cafe.png",
@@ -80,93 +80,102 @@ export default function Home() {
   const services = [
     {
       icon: <Brain className="w-8 h-8" />,
-      title: "AI Solutions",
+      title: "AI That Works for Your Business",
       description:
-        "Harness the power of artificial intelligence to automate tasks, gain insights, and transform your business operations with cutting-edge AI technology.",
+        "Turn AI into a practical advantage — from chatbots that handle customer questions to data models that uncover insights. We make AI simple, useful, and profitable for your business.",
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Business Automation",
+      title: "Business Process Automation",
       description:
-        "Streamline your workflows with custom automation solutions that save time, reduce errors, and boost productivity across your organization.",
+        "Save 10+ hours every week by automating repetitive tasks like data entry, reporting, and customer follow-ups. We connect your tools and workflows so your business runs on autopilot.",
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "Website Development",
+      title: "Websites That Convert",
       description:
-        "Beautiful, responsive websites built with modern frameworks like Next.js and React. Fast, SEO-optimized, and designed to convert visitors into customers.",
+        "We build fast, modern websites designed to turn visitors into customers. Every site is mobile-optimized, SEO-ready, and built to drive measurable results — not just look good.",
     },
     {
       icon: <Cog className="w-8 h-8" />,
       title: "Custom Business Tools",
       description:
-        "Tailored software solutions designed specifically for your business needs. From data management to process optimization, we build tools that work for you.",
+        "Streamline your operations with tailored software built around your exact workflow — dashboards, CRMs, management systems, and more, designed to save time and reduce manual work.",
     },
   ];
 
   const projectPricing = [
     {
       category: "Website Development",
-      startingPrice: "$250",
-      description: "Custom websites built with modern technologies",
+      startingPrice: "from $300",
+      description:
+        "High-converting, responsive websites built to attract customers and grow your brand online.",
       features: [
-        "Responsive Design (Mobile & Desktop)",
-        "SEO Optimization",
-        "Contact Forms & Integration",
-        "Basic SEO Setup",
-        "2 Weeks Development Time",
+        "Mobile-first, SEO-optimized design",
+        "Fast loading and conversion-focused layouts",
+        "Lead capture & contact integration",
+        "Basic on-page SEO setup",
+        "Delivered in 2–3 weeks",
       ],
-      examples: ["Business Websites", "Portfolio Sites", "Landing Pages"],
+      examples: [
+        "Business Websites",
+        "Portfolios",
+        "Landing Pages",
+        "Local Service Sites",
+      ],
     },
     {
       category: "Business Automation",
-      startingPrice: "$350",
-      description: "Streamline your business processes with custom automation",
+      startingPrice: "from $500",
+      description:
+        "Custom automations that eliminate repetitive tasks, connect your tools, and save you hours each week.",
       features: [
-        "Workflow Automation",
-        "Data Sync Between Systems",
-        "Custom Dashboard",
-        "Report Generation",
-        "API Development",
-        "3-5 Weeks Development Time",
+        "Workflow and data automation",
+        "CRM and email integration",
+        "Custom dashboards & reports",
+        "API connections between tools",
+        "3–5 weeks delivery time",
       ],
-      examples: ["CRM Automation", "Data Processing", "Workflow Systems"],
+      examples: [
+        "CRM Automation",
+        "Lead Follow-Up Systems",
+        "Reporting Automation",
+      ],
     },
     {
-      category: "Customized AI Solutions",
-      startingPrice: "$500",
-      description: "Intelligent automation and machine learning solutions",
+      category: "Custom AI Solutions",
+      startingPrice: "from $500",
+      description:
+        "Smart AI systems that analyze data, automate communication, and provide insights for your business.",
       features: [
-        "Custom AI Model Development",
-        "Data Analysis & Processing",
-        "Natural Language Processing",
-        "Predictive Analytics",
-        "API Integration",
-        "4-6 Weeks Development Time",
+        "AI chatbots & assistants",
+        "Predictive analytics & insights",
+        "Custom model integration",
+        "Data analysis & report automation",
+        "4–6 weeks delivery time",
       ],
       examples: ["Chatbots", "Data Analysis Tools", "Predictive Models"],
     },
     {
       category: "Custom Business Tools",
-      startingPrice: "$500",
-      description: "Tailored software solutions for your specific needs",
+      startingPrice: "from $500",
+      description:
+        "Fully tailored internal tools built around your workflow — from management systems to analytics dashboards.",
       features: [
-        "Custom Database Design",
-        "User Management System",
-        "Real-time Updates",
-        "Advanced Analytics",
-        "Multi-platform Support",
-        "5-8 Weeks Development Time",
+        "Custom database & user system",
+        "Real-time data sync",
+        "Advanced reporting & analytics",
+        "Cross-platform support",
+        "5–8 weeks delivery time",
       ],
       examples: ["Internal Tools", "Management Systems", "Custom CRMs"],
     },
   ];
-
   const stats = [
     { label: "Years Experience", value: "2+" },
     { label: "Projects Delivered", value: "15+" },
     { label: "Happy Clients", value: "12+" },
-    { label: "Technologies", value: "20+" },
+    { label: "Hours Saved (avg per client)", value: "10+" },
   ];
 
   const fadeInUp = {
@@ -206,7 +215,7 @@ export default function Home() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
-    type: "", // 'success', 'error', 'rate-limit'
+    type: "",
     message: "",
   });
 
@@ -371,20 +380,18 @@ export default function Home() {
                 className="inline-block mb-6"
               >
                 <span className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-sm">
-                  2+ Years of Excellence in Web Development
+                  2+ Years of Excellence in Tech Services
                 </span>
               </motion.div>
 
               <h1 className="text-5xl md:text-7xl font-bold mb-6 p-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Transform Your Vision
-                <br />
-                Into Digital Reality
+                Websites and Automation That Work for You.
               </h1>
 
               <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto">
-                Professional web development, AI solutions, and business
-                automation services in Columbus, Ohio. We craft cutting-edge
-                websites and tools that drive results.
+                Columbus-based web development and automation experts. We build
+                high-performing websites and smart AI systems that save time,
+                capture leads, and grow revenue.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -443,11 +450,11 @@ export default function Home() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Our Web Development Portfolio
+                Our Portfolio
               </h2>
               <p className="text-slate-400 text-lg">
-                Recent projects that showcase our expertise in web development
-                and business automation
+                Recent projects that showcase our expertise in tech services and
+                business automation
               </p>
             </motion.div>
 
@@ -487,7 +494,7 @@ export default function Home() {
                             {item.category}
                           </span>
                         </div>
-                        <h3 className="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
+                        <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
                           {item.title}
                         </h3>
                         <p className="text-slate-400 mb-4">
@@ -522,7 +529,7 @@ export default function Home() {
                             {item.category}
                           </span>
                         </div>
-                        <h3 className="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
+                        <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
                           {item.title}
                         </h3>
                         <p className="text-slate-400 mb-4">
@@ -772,6 +779,86 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+        <section
+          id="why-choose-us"
+          aria-label="Why Choose Columbus Tech Partners"
+          className="py-20 px-6"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Why Choose Columbus Tech Partners?
+              </h2>
+              <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+                We're not just developers—we're your technology partners
+                committed to delivering exceptional results
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {[
+                {
+                  title: "Local Columbus Expertise",
+                  description:
+                    "Based right here in Columbus, Ohio, we understand local businesses and provide personalized, hands-on support you can rely on.",
+                  icon: <MapPin className="w-8 h-8" />,
+                },
+                {
+                  title: "Proven Track Record",
+                  description:
+                    "With 15+ successful projects and 12+ happy clients, we've consistently delivered solutions that drive real business results.",
+                  icon: <Star className="w-8 h-8" />,
+                },
+                {
+                  title: "Modern Technology Stack",
+                  description:
+                    "We use cutting-edge frameworks like Next.js and React to build fast, scalable, and future-proof solutions.",
+                  icon: <Code2 className="w-8 h-8" />,
+                },
+                {
+                  title: "Time & Cost Savings",
+                  description:
+                    "Our automation solutions save clients an average of 10+ hours per week, letting you focus on what matters most.",
+                  icon: <Zap className="w-8 h-8" />,
+                },
+                {
+                  title: "Transparent Pricing",
+                  description:
+                    "No hidden fees or surprises. We provide clear, project-based pricing with detailed quotes tailored to your needs.",
+                  icon: <Check className="w-8 h-8" />,
+                },
+                {
+                  title: "Ongoing Support",
+                  description:
+                    "We don't disappear after launch. Every project includes post-launch support to ensure your continued success.",
+                  icon: <Cog className="w-8 h-8" />,
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+                >
+                  <div className="text-cyan-400 mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-slate-400">{item.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
 
         <section aria-label="Start Your Project" className="py-20 px-6">
           <motion.div
@@ -818,7 +905,7 @@ export default function Home() {
               </h2>
               <p className="text-slate-400 text-lg">
                 Let's discuss how we can help transform your business with our
-                web development services
+                tech services
               </p>
             </motion.div>
 
